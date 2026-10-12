@@ -1,0 +1,14 @@
+category,sub_category,profit,rank_in_category
+Furniture,Furnishings,16880.0,1
+Furniture,Chairs,-11891.0,2
+Furniture,Bookcases,-31692.0,3
+Furniture,Tables,-41517.0,4
+Office Supplies,Paper,36312.0,1
+Office Supplies,Binders,28853.0,2
+Office Supplies,Appliances,23876.0,3
+Office Supplies,Art,14810.0,4
+Office Supplies,Storage,11432.0,5
+Technology,Copiers,191607.0,1
+Technology,Accessories,30844.0,2
+Technology,Phones,29107.0,3
+Technology,Machines,-46623.0,4

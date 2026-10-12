@@ -1,0 +1,5 @@
+region,order_lines,sales,profit,margin_pct,avg_discount_pct
+Central,1822,1002450.0,37395.0,3.7,13.9
+West,2284,1274683.0,73936.0,5.8,11.0
+East,1995,1088305.0,74310.0,6.8,10.1
+South,1178,716689.0,66355.0,9.3,9.9

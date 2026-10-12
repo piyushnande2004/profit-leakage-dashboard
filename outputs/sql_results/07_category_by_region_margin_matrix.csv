@@ -1,0 +1,13 @@
+category,region,margin_pct
+Furniture,Central,-8.8
+Furniture,West,-5.2
+Furniture,East,-4.0
+Furniture,South,-1.8
+Office Supplies,Central,13.3
+Office Supplies,West,16.2
+Office Supplies,South,16.3
+Office Supplies,East,17.2
+Technology,Central,7.8
+Technology,West,9.8
+Technology,East,10.1
+Technology,South,13.9
