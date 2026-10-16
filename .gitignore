@@ -1,4 +1,5 @@
 venv/
+.venv/
 __pycache__/
-*.lnk
-.DS_Store
+*.pyc
+.env
