@@ -86,14 +86,23 @@ k = an.kpis(df)
 mapped_txt = ", ".join(f"{an.LABELS[f].split('  ')[0]} = '{c}'" for f, c in mapping.items() if c)
 st.caption(f"Detected columns: {mapped_txt}")
 
-
 def sign_bar(t, x, y, horizontal=False, title=""):
-    t = t.assign(result=lambda d: d.profit.lt(0).map({True: "Loss", False: "Profit"}))
-    fig = px.bar(t, x=y if horizontal else x, y=x if horizontal else y, color="result",
-                 color_discrete_map=COLORS, orientation="h" if horizontal else "v", title=title)
-    fig.update_layout(showlegend=False, margin=dict(t=50, b=10))
+    t = t.copy()
+    t[x] = t[x].astype(str)  # keep band/category names as plain text
+    sign_col = "profit" if "profit" in t else y
+    colors = t[sign_col].lt(0).map({True: COLORS["Loss"], False: COLORS["Profit"]}).tolist()
+    fig = go.Figure(go.Bar(
+        x=t[y] if horizontal else t[x],
+        y=t[x] if horizontal else t[y],
+        marker_color=colors,
+        orientation="h" if horizontal else "v",
+    ))
+    fig.update_layout(title=title, showlegend=False, margin=dict(t=50, b=10))
+    if horizontal:
+        fig.update_yaxes(type="category")
+    else:
+        fig.update_xaxes(type="category")
     return fig
-
 
 tabs = st.tabs(["Overview", "Profit leakage", "Products & categories", "Regions & customers",
                 "Data quality", "Export"])
